@@ -4,50 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Logical_Program
+namespace Logical_Program
 {
     internal class Average_Q6
     {
-        
-        
-            public static void Average_Q6()
+
+
+        public Average_Q6()
+        {
+            // Create a Random object to generate random numbers
+            Random random = new Random();
+
+            // Initialize variables to store the sum of numbers and the generated numbers
+            int sum = 0;
+            string generatedNumbers = "";
+
+            // Generate 5 random numbers and calculate the sum
+            for (int i = 0; i < 5; i++)
             {
-                // Initialize a random number generator
-                Random random = new Random();
-
-                // Create an array to store the random numbers
-                int[] numbers = new int[5];
-
-                // Generate 5 random numbers between 10 and 50
-                for (int i = 0; i < 5; i++)
-                {
-                    numbers[i] = random.Next(10, 51); // 10 is inclusive, 51 is exclusive
-                }
+                int randomNumber = random.Next(10, 50); // Generates a random number between 10 and 50 (inclusive)
+                sum += randomNumber;
+                generatedNumbers += randomNumber + " ";
 
                 // Print the generated numbers in one line
-                Console.Write("Generated numbers: ");
-                foreach (int number in numbers)
-                {
-                    Console.Write(number + " ");
-                }
-
-                Console.WriteLine(); // Move to the next line
-
-                // Compute the average
-                int sum = 0;
-                foreach (int number in numbers)
-                {
-                    sum += number;
-                }
-                double average = (double)sum / numbers.Length;
-
-                // Print the average
-                Console.WriteLine("Average: " + average);
-
-                // Pause the program so the result can be viewed
-                Console.ReadLine();
+                Console.Write(randomNumber + " ");
             }
+
+            // Calculate the average
+            double average = (double)sum / 5;
+
+            // Print a new line and the average
+            Console.WriteLine("\nAverage: " + average);
         }
     }
-
-*/
+}
